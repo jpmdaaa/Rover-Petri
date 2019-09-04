@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 public class Place
     {
-        private int _iD;
+        private string _iD;
         private Boolean empty;
         private ArrayList tokensList;
     
-        public Place(int id)
+        public Place(string id)
         {
             this._iD = id;
             this.empty = true;
@@ -27,7 +27,7 @@ public class Place
         {
             return empty;
         }
-        public int getId()
+        public string getId()
         {
             return _iD;
         }

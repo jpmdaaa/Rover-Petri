@@ -20,8 +20,27 @@ public class Rover : MonoBehaviour
     public void buildRover()
     {
 
-        PetriRover.insertPlace(new Place(0));  //0 eh o id do Lugar
-        PetriRover.insertPlace(new Place(1));
+        PetriRover.insertPlace(new Place("Rover"));  //0 eh o id do Lugar
+        //açoes base
+        PetriRover.insertPlace(new Place("Atacar"));
+        PetriRover.insertPlace(new Place("Abastecer"));
+        PetriRover.insertPlace(new Place("Recarregar"));
+        PetriRover.insertPlace(new Place("Resgatar"));
+
+
+        //variaveis
+        PetriRover.insertPlace(new Place("Vida"));
+        PetriRover.insertPlace(new Place("Combustivel"));
+
+        //condiçoes
+        PetriRover.insertPlace(new Place("Deslocar"));
+        PetriRover.insertPlace(new Place("Deslocar"));
+        PetriRover.insertPlace(new Place("Deslocar"));
+
+
+
+
+
 
         PetriRover.getPlace(0).addToken(new Token(0)); //0 eh o id do Token
 
@@ -29,7 +48,6 @@ public class Rover : MonoBehaviour
 
         PetriRover.getTransition(0).insertConnection(new Connection(PetriRover.getPlace(0), true, false)); //de entrada, nao inibidor
     }
-}
 
     // Update is called once per frame
     void Update()
