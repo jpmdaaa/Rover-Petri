@@ -31,5 +31,12 @@ public class Place
         {
             return _iD;
         }
+
+        public void removeToken(Token token)
+        {
+            tokensList.Remove(token);
+        
+        }
+
     }
 

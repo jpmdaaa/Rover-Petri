@@ -41,8 +41,11 @@ public class Rover : MonoBehaviour
 
 
 
+        for(int i=0;i<100;i++)
+        {
+            PetriRover.getPlace(6).addToken(new Token(i)); //0 eh o id do Token
 
-        PetriRover.getPlace(0).addToken(new Token(0)); //0 eh o id do Token
+        }
 
         PetriRover.insertTransition(new Transition(0)); //0 eh o id da Transicao
 
@@ -52,6 +55,10 @@ public class Rover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(PetriRover.getPlace(6).isEmpty())
+        {
+            Debug.Log("MORTO");
+        }
+
     }
 }
