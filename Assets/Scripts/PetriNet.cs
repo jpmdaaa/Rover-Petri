@@ -17,6 +17,9 @@ public class PetriNet
 
         public void execCycle()
         {
+
+
+
         }
         public void insertTransition(Transition transition)
         {
