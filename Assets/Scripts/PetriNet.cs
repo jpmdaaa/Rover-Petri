@@ -9,6 +9,7 @@ public class PetriNet
     {
         private ArrayList placeList;
         private ArrayList transitionList;
+        private Transition transition;
         public PetriNet()
         {
             placeList = new ArrayList();
@@ -17,8 +18,17 @@ public class PetriNet
 
         public void execCycle()
         {
+             //percorrer as transiçoes e verificar se estão habilitadas
+             //percorrer as transições habilitadas jogando os tokens de um place para o outro
 
-
+            //percorrendo a 1 vez a lista de transiçoes
+            for(int i=0;i< transitionList.Count; i++)
+            {
+              
+                transitionList[i].
+              
+            }
+        
 
         }
         public void insertTransition(Transition transition)

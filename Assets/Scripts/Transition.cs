@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 public class Transition
     {
         private int id;
-        private bool enabled;
+        public bool enabled;
         public ArrayList connInList;
         public ArrayList connOutList;
 
