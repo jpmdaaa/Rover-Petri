@@ -37,11 +37,7 @@ public class Rover : MonoBehaviour
         PetriRover.getTransition(1).insertConnection(new Connection(PetriRover.getPlace(4), false, false)); //de entrada, nao inibidor
         PetriRover.getTransition(1).insertConnection(new Connection(PetriRover.getPlace(6), false, false)); //de entrada, nao inibidor
 
-
-
-
-
-
+        PetriRover.execCycle();
 
         /*
         PetriRover.insertPlace(new Place("Rover"));  //0 eh o id do Lugar
@@ -109,10 +105,11 @@ public class Rover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if(PetriRover.getPlace(6).isEmpty())
         {
             Debug.Log("MORTO");
         }
-
+        */
     }
 }
