@@ -12,6 +12,7 @@ public class Transition
         public bool enabled;
         public ArrayList connInList;
         public ArrayList connOutList;
+        private Place place;
 
         public Transition(int id)
         {
@@ -40,7 +41,14 @@ public class Transition
         {
             return id;
         }
-
+        
+     public void TestEnable()
+      {
+        if(place.isEmpty()==false)
+        {
+            isEnabled();
+        }
+      }
 
 
     }

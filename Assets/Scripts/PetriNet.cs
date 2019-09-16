@@ -11,12 +11,14 @@ public class PetriNet
         private ArrayList placeList;
         private ArrayList transitionList;
         private List<Transition> transitionL;
+        private List<Place> placeL;
+
         public PetriNet()
         {
             placeList = new ArrayList();
             transitionList = new ArrayList();
-          
-        }
+           
+    }
 
         public void execCycle()
         {
@@ -28,11 +30,16 @@ public class PetriNet
             //percorrendo a 1 vez a lista de transiçoes
             for(int i=0;i< transitionList.Count; i++)
             {
-
-                //verificando quais estão habilitadas
+            //verificando quais estão habilitadas
+            transitionL[i].TestEnable();
+            // se esta habilitada
                 if (transitionL[i].enabled)
                 {
+                //varre a lista de place, transfere os tokens
+                    for(int x=0; x<transitionL.Count;x++)
+                    {
                     
+                    }
                 }
 
             }
@@ -49,6 +56,7 @@ public class PetriNet
         public void insertPlace(Place place)
         {
             placeList.Add(place);
+            placeL.Add(place);
         }
         public Transition getTransition(int pos)
         {
