@@ -18,7 +18,7 @@ public class PetriNet
             placeList = new ArrayList();
             transitionList = new ArrayList();
            
-    }
+        }
 
         public void execCycle()
         {
@@ -36,7 +36,10 @@ public class PetriNet
                 if (transitionL[i].enabled)
                 {
                 //varre a lista de place, transfere os tokens
-                    //for
+                    for(int x=0; x<placeL.Count;x++)
+                    {
+
+                    }
 
 
                 }
