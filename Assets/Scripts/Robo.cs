@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rover : MonoBehaviour
+public class Robo : MonoBehaviour
 {
 
     public PetriNet PetriRover;
@@ -14,49 +14,39 @@ public class Rover : MonoBehaviour
         RoverRigidBody2D = GetComponent<Rigidbody2D>();
         PetriRover = new PetriNet();
 
-        buildRover();
+        buildRobo();
     }
 
-    public void buildRover()
+    public void buildRobo()
     {
         PetriRover.insertPlace(new Place("Rover"));  //0 eh o id do Lugar
         
         //açoes base
         PetriRover.insertPlace(new Place("Atacar"));
-        PetriRover.insertPlace(new Place("Abastecer"));
-        PetriRover.insertPlace(new Place("Recarregar"));
-        PetriRover.insertPlace(new Place("Resgatar"));
-        PetriRover.insertPlace(new Place("Deslocar"));
-        PetriRover.insertPlace(new Place("Usar Escudo"));
-
-
+        PetriRover.insertPlace(new Place("Andar"));
+       
 
         //variaveis
         PetriRover.insertPlace(new Place("Vida"));
         PetriRover.insertPlace(new Place("Combustivel"));
-        PetriRover.insertPlace(new Place("Municao"));
+        PetriRover.insertPlace(new Place("Munição"));
 
 
         //condiçoes
        PetriRover.insertPlace(new Place("No alcance para atacar"));
-       PetriRover.insertPlace(new Place("No quadrante combustivel"));
-       PetriRover.insertPlace(new Place("No quadrante municao"));
        PetriRover.insertPlace(new Place("Deslocando"));
-       PetriRover.insertPlace(new Place("Escudo sendo utilizado"));
        PetriRover.insertPlace(new Place("Tomou um tiro"));
-       PetriRover.insertPlace(new Place("Tomou um tiro sem escudo"));
-       PetriRover.insertPlace(new Place("Acabou o escudo"));
-
+   
 
         //limpadores 
         PetriRover.insertPlace(new Place("Bateu"));
-        PetriRover.insertPlace(new Place("Noo Bateu"));
+        PetriRover.insertPlace(new Place("Nao Bateu"));
 
    
 
         for (int i=0;i<100;i++)
         {
-            PetriRover.getPlace(6).addToken(new Token(i)); //0 eh o id do Token
+            PetriRover.getPlace(3).addToken(new Token(i)); //0 eh o id do Token
 
         }
 

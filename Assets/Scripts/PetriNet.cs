@@ -38,6 +38,14 @@ public class PetriNet
                 //varre a lista de place, transfere os tokens
                     for(int x=0; x<placeL.Count;x++)
                     {
+                        if(placeL[x].isEmpty())
+                        {
+                         
+                        }
+                        else
+                        {
+
+                        }
 
                     }
 
