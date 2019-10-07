@@ -40,7 +40,7 @@ public class PetriNet
                     {
                         if(placeL[x].isEmpty())
                         {
-                         
+                            
                         }
                         else
                         {
@@ -54,8 +54,6 @@ public class PetriNet
 
             }
 
-
-        
 
         }
         public void insertTransition(Transition transition)
