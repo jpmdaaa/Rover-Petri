@@ -22,18 +22,15 @@ public class PetriNet
 
         public void execCycle()
         {
-
-        //percorrer as transiçoes e verificar se estão habilitadas (feito)
-        //percorrer as transições habilitadas jogando os tokens de um place para o outro!!!
-         Debug.Log(transitionL);
-
+  
             //percorrendo a 1 vez a lista de transiçoes
             for(int i=0;i< transitionList.Count; i++)
             {
             //verificando quais estão habilitadas
-            transitionL[i].TestEnable();
-            // se esta habilitada
-                if (transitionL[i].enabled)
+            transitionL[i].isEnabled();
+            /*
+           // se esta habilitada
+                 if (transitionL[i].enabled)
                 {
                 //varre a lista de place, transfere os tokens
                     for(int x=0; x<placeL.Count;x++)
@@ -48,14 +45,13 @@ public class PetriNet
                         }
 
                     }
-
+                   
 
                 }
-
+                 */
             }
 
-
-        }
+    }
         public void insertTransition(Transition transition)
         {
             transitionList.Add(transition);

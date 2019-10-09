@@ -10,6 +10,7 @@ public class Connection
         private Boolean inhibitorArc;
         private Boolean entryArc;
         private Place place;
+        public int peso;
 
         public Connection()
         {
@@ -32,7 +33,8 @@ public class Connection
         {
             return place;
         }
-
+        
+        
         
 
     }

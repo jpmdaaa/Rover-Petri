@@ -6,8 +6,8 @@ using System.Text;
  
 
 
-public class Place
-    {
+public class Place 
+{
         private string _iD;
         private Boolean empty;
         private ArrayList tokensList;
@@ -37,6 +37,9 @@ public class Place
             tokensList.Remove(token);
         
         }
-
+        public int GetToken()
+        {
+         return tokensList.Capacity;
+        }
     }
 
