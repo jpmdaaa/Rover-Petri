@@ -31,11 +31,11 @@ public class Transition
         for (int x = 0; x < placeIn.Count; x++)
         {
             //qual é o peso?
-            if (placeIn[x].isEmpty() && placeIn[x].GetToken() < peso)
+            if (placeIn[x].isEmpty() && placeIn[x].GetToken() < connectionIn[x].peso)
             {
                 return enabled = false;
             }
-            else if(placeIn[x].isEmpty()==false && placeIn[x].GetToken() >= peso)
+            else if(placeIn[x].isEmpty()==false && placeIn[x].GetToken() >= connectionIn[x].peso)
             {
                 return enabled= true;
             }
@@ -49,9 +49,9 @@ public class Transition
         {
             for(int x=0; x<placeIn.Count; x++)
            {
-                for(int y=0; y<peso; y++)
+                for(int y=0; y<connectionIn[x].peso; y++)
                 {
-                // new token??
+               
                     placeIn[y].removeToken(new Token());
                     
                 }
@@ -60,9 +60,9 @@ public class Transition
 
             for(int x=0; x<placeOut.Count; x++)
          {
-            for(int y=0; y<peso; y++)
+            for(int y=0; y<connectionOut[x].peso; y++)
             {
-                //qual é o peso?
+                
                 placeIn[y].addToken(new Token());
             }
          }
