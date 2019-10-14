@@ -46,6 +46,7 @@ public class Rover : MonoBehaviour
        PetriRover.insertPlace(new Place("Tomou um tiro"));
        PetriRover.insertPlace(new Place("Tomou um tiro sem escudo"));
        PetriRover.insertPlace(new Place("Acabou o escudo"));
+        PetriRover.insertPlace(new Place("No alcance para atacar"));
 
 
         //limpadores 
@@ -69,9 +70,10 @@ public class Rover : MonoBehaviour
         //PetriRover.insertTransition(new Transition(0));
 
 
+        PetriRover.getTransition(0).insertConnection(new Connection(PetriRover.getPlace(1), true, false)); //de entrada, nao inibidor
         PetriRover.getTransition(0).insertConnection(new Connection(PetriRover.getPlace(0), true, false)); //de entrada, nao inibidor
-
-         
+        PetriRover.getTransition(0).insertConnection(new Connection(PetriRover.getPlace(0), true, false)); //de entrada, nao inibidor
+        PetriRover.getTransition(0).insertConnection(new Connection(PetriRover.getPlace(0), true, false)); //de entrada, nao inibido
 
     }
 

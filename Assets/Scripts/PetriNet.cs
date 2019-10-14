@@ -28,27 +28,14 @@ public class PetriNet
             {
             //verificando quais estão habilitadas
             transitionL[i].isEnabled();
-            /*
+            
            // se esta habilitada
                  if (transitionL[i].enabled)
                 {
-                //varre a lista de place, transfere os tokens
-                    for(int x=0; x<placeL.Count;x++)
-                    {
-                        if(placeL[x].isEmpty())
-                        {
-                            
-                        }
-                        else
-                        {
-
-                        }
-
-                    }
-                   
+                     transitionL[i].Trigger();
 
                 }
-                 */
+                 
             }
 
     }

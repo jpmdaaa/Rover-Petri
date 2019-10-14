@@ -8,11 +8,11 @@ using System.Text;
 
 public class Place 
 {
-        private string _iD;
+        private int _iD;
         private Boolean empty;
         private ArrayList tokensList;
     
-        public Place(string id)
+        public Place(int id)
         {
             this._iD = id;
             this.empty = true;
@@ -27,7 +27,7 @@ public class Place
         {
             return empty;
         }
-        public string getId()
+        public int getId()
         {
             return _iD;
         }

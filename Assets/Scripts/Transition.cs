@@ -30,7 +30,7 @@ public class Transition
       
         for (int x = 0; x < placeIn.Count; x++)
         {
-            //qual é o peso?
+            
             if (placeIn[x].isEmpty() && placeIn[x].GetToken() < connectionIn[x].peso)
             {
                 return enabled = false;
@@ -47,8 +47,10 @@ public class Transition
 
         public void Trigger()
         {
+               //verifica todos os Place de entrada
             for(int x=0; x<placeIn.Count; x++)
            {
+                //Enquanto o Y for menor que o peso dos arcos de entrada ele vai retirar os tokens
                 for(int y=0; y<connectionIn[x].peso; y++)
                 {
                
@@ -57,9 +59,10 @@ public class Transition
                 }
              
            }
-
+            // verifica todos os Place de saida
             for(int x=0; x<placeOut.Count; x++)
          {
+            //Enquanto o Y for menor que o peso da conexão ele adiciona os tokens
             for(int y=0; y<connectionOut[x].peso; y++)
             {
                 
