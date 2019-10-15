@@ -19,49 +19,37 @@ public class Rover : MonoBehaviour
 
     public void buildRover()
     {
-        PetriRover.insertPlace(new Place("Rover"));  //0 eh o id do Lugar
-        
-        //açoes base
-        PetriRover.insertPlace(new Place("Atacar"));
-        PetriRover.insertPlace(new Place("Abastecer"));
-        PetriRover.insertPlace(new Place("Recarregar"));
-        PetriRover.insertPlace(new Place("Resgatar"));
-        PetriRover.insertPlace(new Place("Deslocar"));
-        PetriRover.insertPlace(new Place("Usar Escudo"));
+        PetriRover.insertPlace(new Place(0));  //Rover
 
 
+        PetriRover.insertPlace(new Place(1)); //atacar
+        PetriRover.insertPlace(new Place(2)); //andar
+        PetriRover.insertPlace(new Place(3)); //Deslocar
+        PetriRover.insertPlace(new Place(4)); //vida
+        PetriRover.insertPlace(new Place(5)); //Combustivel
+        PetriRover.insertPlace(new Place(6)); //Munição
+        PetriRover.insertPlace(new Place(7)); //No alcance para atacar
+        PetriRover.insertPlace(new Place(8)); //Deslocando
+        PetriRover.insertPlace(new Place(9)); //Tomou um tiro
+        PetriRover.insertPlace(new Place(10)); //Bateu
+        PetriRover.insertPlace(new Place(11)); //Nao Bateu
+        PetriRover.insertPlace(new Place(12)); //Parede
+        PetriRover.insertPlace(new Place(13)); //Não bateu
+        PetriRover.insertPlace(new Place(14)); //LUGAR VAZIO 1
+        PetriRover.insertPlace(new Place(15)); //LUGAR VAZIO 2
+        PetriRover.insertPlace(new Place(16)); // UTILIZAR ESCUDO
+        PetriRover.insertPlace(new Place(17)); //LUGAR VAZIO 3
+        PetriRover.insertPlace(new Place(17)); //Escudo sendo utilizado
 
-        //variaveis
-        PetriRover.insertPlace(new Place("Vida"));
-        PetriRover.insertPlace(new Place("Combustivel"));
-        PetriRover.insertPlace(new Place("Municao"));
 
-
-        //condiçoes
-       PetriRover.insertPlace(new Place("No alcance para atacar"));
-       PetriRover.insertPlace(new Place("No quadrante combustivel"));
-       PetriRover.insertPlace(new Place("No quadrante municao"));
-       PetriRover.insertPlace(new Place("Deslocando"));
-       PetriRover.insertPlace(new Place("Escudo sendo utilizado"));
-       PetriRover.insertPlace(new Place("Tomou um tiro"));
-       PetriRover.insertPlace(new Place("Tomou um tiro sem escudo"));
-       PetriRover.insertPlace(new Place("Acabou o escudo"));
-        PetriRover.insertPlace(new Place("No alcance para atacar"));
-
-
-        //limpadores 
-        PetriRover.insertPlace(new Place("Bateu"));
-        PetriRover.insertPlace(new Place("Noo Bateu"));
-
-   
-
-        for (int i=0;i<100;i++)
+        for (int i = 0; i < 100; i++)
         {
-            PetriRover.getPlace(6).addToken(new Token(i)); //0 eh o id do Token
+            PetriRover.getPlace(5).addToken(new Token(i));
 
         }
 
-        for(int i =0; i<24;i++)
+
+        for (int i = 0; i < 22; i++)
         {
             PetriRover.insertTransition(new Transition(i)); //i eh o id da Transicao
         }
@@ -69,11 +57,35 @@ public class Rover : MonoBehaviour
 
         //PetriRover.insertTransition(new Transition(0));
 
+        //conexões
+        // transição(lugar, entrada, inibidor)
+        //numero da transição -1 comparado a imagem da rede
 
-        PetriRover.getTransition(0).insertConnection(new Connection(PetriRover.getPlace(1), true, false)); //de entrada, nao inibidor
-        PetriRover.getTransition(0).insertConnection(new Connection(PetriRover.getPlace(0), true, false)); //de entrada, nao inibidor
-        PetriRover.getTransition(0).insertConnection(new Connection(PetriRover.getPlace(0), true, false)); //de entrada, nao inibidor
-        PetriRover.getTransition(0).insertConnection(new Connection(PetriRover.getPlace(0), true, false)); //de entrada, nao inibido
+        PetriRover.getTransition(0).insertConnection(new Connection(PetriRover.getPlace(0), true, false));
+        PetriRover.getTransition(0).insertConnection(new Connection(PetriRover.getPlace(3), true, false));
+        PetriRover.getTransition(0).insertConnection(new Connection(PetriRover.getPlace(5), true, false));
+        PetriRover.getTransition(0).insertConnection(new Connection(PetriRover.getPlace(8), false, false));
+        PetriRover.getTransition(1).insertConnection(new Connection(PetriRover.getPlace(8), true, false));
+        PetriRover.getTransition(1).insertConnection(new Connection(PetriRover.getPlace(13), false, true));
+        PetriRover.getTransition(2).insertConnection(new Connection(PetriRover.getPlace(8), true, false));
+        PetriRover.getTransition(2).insertConnection(new Connection(PetriRover.getPlace(12), true, false));
+        PetriRover.getTransition(2).insertConnection(new Connection(PetriRover.getPlace(10), false, false));
+        PetriRover.getTransition(3).insertConnection(new Connection(PetriRover.getPlace(10), true, false));
+        PetriRover.getTransition(3).insertConnection(new Connection(PetriRover.getPlace(14), false, false));
+        PetriRover.getTransition(4).insertConnection(new Connection(PetriRover.getPlace(0), true, false));
+        PetriRover.getTransition(4).insertConnection(new Connection(PetriRover.getPlace(1), true, false));
+        PetriRover.getTransition(4).insertConnection(new Connection(PetriRover.getPlace(7), false, false));
+        PetriRover.getTransition(5).insertConnection(new Connection(PetriRover.getPlace(7), true, false));
+        PetriRover.getTransition(5).insertConnection(new Connection(PetriRover.getPlace(1), false, false));
+        PetriRover.getTransition(6).insertConnection(new Connection(PetriRover.getPlace(1), true, false));
+        PetriRover.getTransition(6).insertConnection(new Connection(PetriRover.getPlace(15), false, true));
+        PetriRover.getTransition(7).insertConnection(new Connection(PetriRover.getPlace(7), true, false));
+        PetriRover.getTransition(7).insertConnection(new Connection(PetriRover.getPlace(16), false, false));
+        PetriRover.getTransition(8).insertConnection(new Connection(PetriRover.getPlace(16), true, false));
+        PetriRover.getTransition(8).insertConnection(new Connection(PetriRover.getPlace(17), true, false));
+        PetriRover.getTransition(9).insertConnection(new Connection(PetriRover.getPlace(16), true, false));
+        PetriRover.getTransition(9).insertConnection(new Connection(PetriRover.getPlace(16), false, false));
+
 
     }
 
